@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap");
 /* Указываем box sizing */
 *,
 *::before,
@@ -27,16 +28,39 @@ blockquote,
 dl,
 dd {
   margin: 0;
-  height: 100%;
-  padding: 0;
 }
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  --black: #000000;
+  --ash-black: #222;
+  --white: #fafafa;
+  --sky: #00ccff;
+  --green: #22dddd;
+  --blue: #1300ff;
+  --dusk: #6600ff;
+  --purple: #9900ff;
+  --pink: #ff0066;
+  --red: #fe0222;
+  --orange: #fd7702;
+  --yellow: #ffbb00;
+
+  --background: var(--white);
+  --accent: var(--black);
+
+  background-color: var(--background);
+  color: var(--accent);
+
+  // overflow-y: hidden;
+  font-family: "Exo 2", sans-serif;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -77,4 +101,22 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.active {
+  color: #000000;
+}
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background: #d1e5ff;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(#642bff,#ff22e6);
+  border-radius: 10px;
 }

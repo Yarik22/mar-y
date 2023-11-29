@@ -1,0 +1,5 @@
+Curiosity location: https://mars.nasa.gov/maps/location/?mission=MSL&site=NOW&mapLon=137.40068435668948&mapLat=-4.7733283835506075&mapZoom=15&globeLon=137.3978687&globeLat=-4.663687049999997&globeZoom=13&globeCamera=0,-2441.40625,0,0,1,0&panePercents=0,100,0&on=Current Position$1.00,Surface View$1.00,Rover Path$1.00,Labels$1.00,Basemap$1.00,Gale Crater Map$1.00
+Weather forecast: https://mars.nasa.gov/layout/embed/image/mslweather/
+Rover: https://mars.nasa.gov/mer/mission/rover/
+Pictures: https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2023-11-27&api_key=DEMO_KEY
+APOD: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
