@@ -1,5 +1,5 @@
 import { Skeleton } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./WeatherPage.module.scss";
 
 export default function WeatherPage() {

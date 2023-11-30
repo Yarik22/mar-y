@@ -2,8 +2,6 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import styles from "./servicesPage.module.scss";
 import { useNavigate } from "react-router-dom";
-import { Skeleton } from "@mui/material";
-import { useState } from "react";
 
 const services = [
   {
@@ -19,7 +17,7 @@ const services = [
   {
     url: "https://i0.wp.com/eos.org/wp-content/uploads/2016/05/artist-concept-mars-rover-writes-with-wheels.jpg?fit=820%2C615&ssl=1",
     name: "Rover",
-    page: "weather",
+    page: "rover",
   },
   {
     url: "https://www.popsci.com/uploads/2023/05/19/MarsPinestand.png?auto=webp&width=1440&height=810",
@@ -33,7 +31,7 @@ const services = [
   },
   {
     url: "https://starwalk.space/gallery/images/mars-the-ultimate-guide/1920x1080.jpg",
-    name: "Learn",
+    name: "Astro",
     page: "weather",
   },
 ];
