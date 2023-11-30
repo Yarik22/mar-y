@@ -1,6 +1,6 @@
 import { Skeleton } from "@mui/material";
 import { useState } from "react";
-import styles from "./WeatherPage.module.scss";
+import styles from "./weatherPage.module.scss";
 
 export default function WeatherPage() {
   const [isLoaded, setIsLoaded] = useState(false);
