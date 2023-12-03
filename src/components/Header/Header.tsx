@@ -38,7 +38,7 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
-  const [user, setUser] = useState<User | null>(null);
+  const [, setUser] = useState<User | null>(null);
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);

@@ -1,19 +1,11 @@
 import axios from "axios";
+import ApodResponse from "./interfaces/APOD";
+import Photo from "./interfaces/AstroPhotos";
 
 const api = axios.create({
   baseURL: "https://api.nasa.gov",
   timeout: 5000,
 });
-
-export interface ApodResponse {
-  date: string;
-  explanation: string;
-  hdurl: string;
-  media_type: string;
-  service_version: string;
-  title: string;
-  url: string;
-}
 
 export const fetchAPOD = async (): Promise<ApodResponse> => {
   try {

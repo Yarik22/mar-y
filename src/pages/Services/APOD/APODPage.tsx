@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ApodResponse, fetchAPOD } from "../../../api/axios";
+import { fetchAPOD } from "../../../api/axios";
 import {
   Accordion,
   AccordionDetails,
@@ -11,6 +11,7 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styles from "./apod.module.scss";
 import useLocalStorage from "../../../hooks/useLocalStorage";
+import ApodResponse from "../../../api/interfaces/APOD";
 
 export default function APODPage() {
   const [data, setData] = useLocalStorage<ApodResponse | null>(null, "apod");
@@ -48,7 +49,10 @@ export default function APODPage() {
   };
 
   return (
-    <div className={styles.container} style={{ position: "absolute", top:"20vh" }}>
+    <div
+      className={styles.container}
+      style={{ position: "absolute", top: "20vh" }}
+    >
       <Paper elevation={3}>
         {!imageLoaded && (
           <Skeleton

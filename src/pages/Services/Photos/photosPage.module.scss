@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  .photos {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+    img {
+      width: calc(20vw + 15vh);
+    }
+  }
+  .photo {
+    text-align: center;
+    border-radius: 10px;
+    overflow: auto;
+    p {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+    }
+  }
+  .pagination {
+    display: flex;
+    div {
+      color: white;
+    }
+    button {
+      color: white;
+    }
+  }
+  .date {
+    color: white;
+    input {
+      color: white;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
