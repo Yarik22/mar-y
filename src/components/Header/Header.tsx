@@ -1,4 +1,3 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,27 +10,25 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import CustomLink from "../CustomLink/CustomLink";
+import { auth } from "../../config/firebase";
+import { useEffect, useState } from "react";
+import { User } from "firebase/auth";
 
 const pages = [
   {
     name: "Services",
     endpoint: "/services",
   },
-  // {
-  //   name: "Pricing",
-  //   endpoint: "/services",
-  // },
-  // {
-  //   name: "Blog",
-  //   endpoint: "/services",
-  // },
+  {
+    name: "Sign up",
+    endpoint: "/signup",
+  },
 ];
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -41,6 +38,22 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+  const [user, setUser] = useState<User | null>(null);
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      auth.signOut();
+      navigate("/signup");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <AppBar position="sticky" style={{ width: "100%" }}>
       <Container maxWidth="xl">
@@ -119,7 +132,7 @@ function ResponsiveAppBar() {
                 textDecoration: "none",
               }}
             >
-              LOGO
+              MARCY
             </Typography>
           </NavLink>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -136,11 +149,28 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
+            {auth.currentUser && (
+              <Button
+                onClick={handleLogout}
+                style={{
+                  color: "white",
+                  border: "solid black 2px",
+                  boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)",
+                  marginRight: "5px",
+                  fontSize: "1.4vh",
+                }}
+              >
+                Logout
+              </Button>
+            )}
             <CustomLink to={"/profile"}>
               <IconButton sx={{ p: 0 }}>
                 <Avatar
                   alt="Remy Sharp"
-                  src="https://camo.githubusercontent.com/c6fe2c13c27fe87ac6581b9fe289d2f071bd1b4ef6f3e3c5fc2aba0bbc23fd88/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37632f50726f66696c655f6176617461725f706c616365686f6c6465725f6c617267652e706e67"
+                  src={
+                    auth.currentUser?.photoURL ||
+                    "https://camo.githubusercontent.com/c6fe2c13c27fe87ac6581b9fe289d2f071bd1b4ef6f3e3c5fc2aba0bbc23fd88/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37632f50726f66696c655f6176617461725f706c616365686f6c6465725f6c617267652e706e67"
+                  }
                 />
               </IconButton>
             </CustomLink>

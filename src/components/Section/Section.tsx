@@ -4,8 +4,8 @@ import styles from "./section.module.scss";
 
 type SectionProps = {
   children: React.ReactNode;
-  translateX: number;
-  translateY: number;
+  translateX: string | number;
+  translateY: string | number;
   transition: number;
 };
 
@@ -24,7 +24,7 @@ export default function Section({
         style={{
           transform: isInView
             ? "none"
-            : `translate(${translateX}px,${translateY}px)`,
+            : `translate(${translateX},${translateY})`,
           opacity: isInView ? 1 : 0,
           zIndex: 1,
           transition: `all ${transition}s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s`,

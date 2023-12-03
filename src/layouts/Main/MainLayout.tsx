@@ -1,12 +1,10 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import styles from "./mainLayout.module.scss";
-import { useEffect } from "react";
+import { auth } from "../../config/firebase";
 
 export default function MainLayout() {
-  const location = useLocation();
-  useEffect(() => {}, [location]);
   return (
     <div className={styles.layout}>
       <header className={styles.header}>

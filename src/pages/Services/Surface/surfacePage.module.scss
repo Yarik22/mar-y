@@ -1,0 +1,8 @@
+.container {
+    width: 100%;
+    height: calc(73vh);
+    @media (max-width: 1360px) {
+      height: calc(61vh - 5vw);
+    }
+  }
+  

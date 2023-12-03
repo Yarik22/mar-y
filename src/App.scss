@@ -1,4 +1,51 @@
-.textWhite{
-    position: absolute;
-    top: -100px;
+.textWhite {
+  position: absolute;
+  top: -100px;
+}
+h1 {
+  font-size: calc(5vw + 3vh);
+  color: rgba(0, 0, 0, 0.9);
+  letter-spacing: 10px;
+}
+
+h2 {
+  letter-spacing: 6px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+p#main_page {
+  background: rgba(255, 255, 255, 0.3);
+  // border: solid black 2px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+#mission-statement,
+#about-program,
+#program-goals {
+  margin-top: 30px;
+}
+
+#draft-plan {
+  font-weight: bold;
+  color: darkblue;
+}
+
+.email-link {
+  color: #0066cc;
+}
+#main_page {
+  background: rgba(255, 255, 255, 0.3);
+  // border: solid black 2px
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: start;
+  list-style: "-";
+  padding-left: 15px;
+}
+#main_page li {
+  font-size: 18px;
 }

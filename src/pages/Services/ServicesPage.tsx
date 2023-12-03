@@ -12,7 +12,7 @@ const services = [
   {
     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzdIZuO-DhB3emhcOCb7RBT8FPq-Kza-fpA&usqp=CAU",
     name: "APOD",
-    page: "weather",
+    page: "apod",
   },
   {
     url: "https://i0.wp.com/eos.org/wp-content/uploads/2016/05/artist-concept-mars-rover-writes-with-wheels.jpg?fit=820%2C615&ssl=1",
@@ -22,17 +22,17 @@ const services = [
   {
     url: "https://www.popsci.com/uploads/2023/05/19/MarsPinestand.png?auto=webp&width=1440&height=810",
     name: "Photos",
-    page: "weather",
+    page: "photos",
   },
   {
     url: "https://www.universetoday.com/wp-content/uploads/2008/06/Mars_atmosphere-1.jpg",
     name: "Surface",
-    page: "weather",
+    page: "surface",
   },
   {
     url: "https://starwalk.space/gallery/images/mars-the-ultimate-guide/1920x1080.jpg",
     name: "Astro",
-    page: "weather",
+    page: "astro",
   },
 ];
 

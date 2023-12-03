@@ -5,25 +5,42 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 
 const Footer = () => {
   return (
-    <Container style={{ fontSize: "16px", display: "flex", flexWrap: "wrap" }}>
+    <Container
+      style={{
+        fontSize: "20px",
+        display: "flex",
+        flexWrap: "wrap",
+        color: "rgba(255,255,255,0.7)",
+      }}
+    >
       <div>
-        Email: popov.yarik.popov@gmail.com
+        {window.innerWidth > 800
+          ? "Email: popov.yarik.popov@gmail.com"
+          : "Gmail"}
         <Tooltip title="Copy">
-          <IconButton>
+          <IconButton
+            onClick={() => {
+              navigator.clipboard.writeText("popov.yarik.popov@gmail.com");
+            }}
+          >
             <EmailIcon />
           </IconButton>
         </Tooltip>
       </div>
       <div>
-        Cell: +380953167438
+        {window.innerWidth > 800 ? "Cell: +380953167438" : "Cell"}
         <Tooltip title="Copy">
-          <IconButton>
+          <IconButton
+            onClick={() => {
+              navigator.clipboard.writeText("+380953167438");
+            }}
+          >
             <PhoneIcon />
           </IconButton>
         </Tooltip>
       </div>
       <div>
-        Telegram: @Clemsonn
+        {window.innerWidth > 800 ? "Telegram: @Clemsonn" : "Telegram"}
         <Tooltip title="Visit">
           <IconButton href="https://t.me/Clemsonn" target="_blank">
             <TelegramIcon />

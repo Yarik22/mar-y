@@ -1,5 +1,5 @@
 {
-  "name": "marsy",
+  "name": "marcy",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,6 +15,7 @@
     "@mui/icons-material": "^5.14.18",
     "@mui/material": "^5.14.18",
     "axios": "^1.6.2",
+    "firebase": "^10.7.0",
     "formik": "^2.4.5",
     "framer-motion": "^10.16.5",
     "react": "^18.2.0",

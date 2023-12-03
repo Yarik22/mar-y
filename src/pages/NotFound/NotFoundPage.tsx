@@ -3,7 +3,14 @@ import { Typography, Button, Container } from "@mui/material";
 
 const NotFoundPage = () => {
   return (
-    <Container maxWidth="md" sx={{ textAlign: "center", mt: 8 }}>
+    <Container
+      maxWidth="md"
+      sx={{
+        textAlign: "center",
+        mt: 8,
+        marginTop: 0,
+      }}
+    >
       <Typography variant="h1" color="primary" gutterBottom>
         404 - Not Found
       </Typography>
