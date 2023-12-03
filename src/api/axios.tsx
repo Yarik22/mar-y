@@ -1,6 +1,5 @@
 import axios from "axios";
 import ApodResponse from "./interfaces/APOD";
-import Photo from "./interfaces/AstroPhotos";
 
 const api = axios.create({
   baseURL: "https://api.nasa.gov",

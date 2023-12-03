@@ -76,6 +76,7 @@ const SignUpPage: React.FC = () => {
       setShowError(false);
       navigate("/");
     } catch (error: any) {
+      console.log(error)
       setShowError(true);
     }
   };
