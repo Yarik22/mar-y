@@ -19,9 +19,9 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { User } from "firebase/auth";
 
-const photosCollectionRef = collection(db, "photos");
-const profile = auth.currentUser;
 const ProfilePage = () => {
+  const photosCollectionRef = collection(db, "photos");
+  const profile = auth.currentUser;
   const [isModalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -114,7 +114,7 @@ const ProfilePage = () => {
           <Typography variant="h6" gutterBottom>
             Are you sure you want to delete your account?
           </Typography>
-          <div style={{display:"flex", justifyContent:"space-around"}}>
+          <div style={{ display: "flex", justifyContent: "space-around" }}>
             <Button variant="contained" color="error" onClick={handleDelete}>
               Yes, Delete
             </Button>
