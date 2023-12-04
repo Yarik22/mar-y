@@ -14,6 +14,7 @@ import SignUpPage from "./pages/Auth/SignUpPage";
 import SigningLayout from "./layouts/SigningLayout/SigningLayout";
 import PrivateLayout from "./layouts/Private/PrivateLayout";
 import { useEffect } from "react";
+import ProfilePage from "./pages/Profile/ProfilePage";
 
 function App() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ function App() {
           <Route path="/services/photos" element={<PhotosPage />} />
           <Route path="/services/surface" element={<SurfacePage />} />
           <Route path="/services/astro" element={<AstroPage />} />
-          <Route path="/profile" element={<div>Profile</div>} />
+          <Route path="/profile" element={<ProfilePage/>} />
         </Route>
       </Route>
       <Route path="/signup" element={<SigningLayout />}>

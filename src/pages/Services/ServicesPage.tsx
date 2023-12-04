@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const services = [
   {
-    url: "https://www.codingonmars.com/images/weather_mars.jpg",
+    url: "https://www.histerius.com/hs0817/cloudy_mars_2.jpg",
     name: "Weather",
     page: "weather",
   },
@@ -59,6 +59,7 @@ export default function ServicesPage() {
             key={idx}
             elevation={5}
             style={{
+              borderRadius:"20px",
               backgroundSize: "cover",
               backgroundImage: `url(${serv.url})`,
               backgroundPosition: "center",

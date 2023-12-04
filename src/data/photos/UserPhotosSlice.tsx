@@ -1,18 +1,44 @@
 import { create } from "zustand";
 import UserPhoto from "../../api/interfaces/UserPhotos";
-import { collection, getDocs } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import { auth, db } from "../../config/firebase";
 import Photo from "../../api/interfaces/AstroPhotos";
 type UserPhotosSlice = {
   photos: UserPhoto[];
   addPhoto: (photo: Photo) => void;
-  fetchPhotos: () => Promise<void>;
+  fetchPhotos: (userId: string) => Promise<void>;
+  deletePhoto: (id: number, user_id: string) => Promise<void>;
 };
-
 const photosCollectionRef = collection(db, "photos");
 
 const useUserPhotosSlice = create<UserPhotosSlice>((set) => ({
   photos: [],
+  deletePhoto: async (id: number, user_id: string) => {
+    try {
+      const q = query(
+        photosCollectionRef,
+        where("id", "==", id),
+        where("user_id", "==", user_id)
+      );
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach(async (document) => {
+        await deleteDoc(doc(db, "photos", document.id));
+      });
+      set((state) => ({
+        photos: state.photos.filter((photo) => photo.id !== id),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  },
   addPhoto: async (photo: Photo) => {
     if (auth.currentUser?.uid != undefined) {
       const newPhoto: UserPhoto = {
@@ -26,15 +52,16 @@ const useUserPhotosSlice = create<UserPhotosSlice>((set) => ({
         user_id: auth.currentUser?.uid,
       };
       set((state) => ({ photos: [...state.photos, newPhoto] }));
+      await addDoc(photosCollectionRef, newPhoto);
     }
   },
-  fetchPhotos: async () => {
+  fetchPhotos: async (userId: string) => {
     try {
-      const data = await getDocs(photosCollectionRef);
-      const filteredData = data.docs.map((doc) => ({
+      const q = query(photosCollectionRef, where("user_id", "==", userId));
+      const querySnapshot = await getDocs(q);
+      const filteredData = querySnapshot.docs.map((doc) => ({
         ...(doc.data() as UserPhoto),
       }));
-      console.log(filteredData);
       set({ photos: filteredData });
     } catch (error) {
       console.log(error);
