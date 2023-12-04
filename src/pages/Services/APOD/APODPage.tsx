@@ -51,7 +51,7 @@ export default function APODPage() {
   return (
     <div
       className={styles.container}
-      style={{ position: "absolute", top: "20vh" }}
+      style={{ position: "absolute", top: "15vh" }}
     >
       <Paper elevation={3}>
         {!imageLoaded && (
@@ -64,7 +64,7 @@ export default function APODPage() {
           />
         )}
         <img
-          style={{ display: imageLoaded ? "block" : "none" }}
+          style={{ display: imageLoaded ? "block" : "none", height:"80vh",width:"100%" }}
           onLoad={handleImageLoad}
           src={data?.hdurl || data?.url}
           alt={data?.title}
@@ -90,6 +90,7 @@ export default function APODPage() {
               <a
                 style={{ color: "black", textDecoration: "underline" }}
                 href={data?.url}
+                target="_blank"
               >
                 {" "}
                 {data?.title}

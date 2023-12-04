@@ -4,7 +4,7 @@
   justify-content: center;
   position: sticky;
   top: 0px;
-  z-index: 2;
+  z-index: 3;
 }
 .main {
   display: flex;
@@ -31,27 +31,29 @@
   backdrop-filter: blur(3px);
   font-size: 14px;
   line-height: 14px;
-  background: rgb(180, 95, 55);
-  background: linear-gradient(
-    90deg,
-    rgba(180, 95, 55, 0.8911939775910365) 0%,
-    rgba(166, 78, 94, 0.9108018207282913) 10%,
-    rgba(181, 55, 55, 0.9164040616246498) 40%,
-    rgba(181, 55, 55, 1) 60%,
-    rgba(166, 78, 94, 1) 90%,
-    rgba(180, 95, 55, 1) 100%
-  );
+  box-shadow: -1px 1px 29px 30px black;
+  background: black;
+  // background: rgb(180, 95, 55);
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(180, 95, 55, 0.8911939775910365) 0%,
+  //   rgba(166, 78, 94, 0.9108018207282913) 10%,
+  //   rgba(181, 55, 55, 0.9164040616246498) 40%,
+  //   rgba(181, 55, 55, 1) 60%,
+  //   rgba(166, 78, 94, 1) 90%,
+  //   rgba(180, 95, 55, 1) 100%
+  // );
 
-  background: rgb(128, 55, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(128, 55, 180, 0.75) 0%,
-    rgba(78, 124, 166, 0.8) 10%,
-    rgba(150, 55, 181, 0.7) 40%,
-    rgba(150, 55, 181, 0.7) 60%,
-    rgba(78, 124, 166, 0.8) 90%,
-    rgba(128, 55, 180, 0.75) 100%
-  );
+  // background: rgb(128, 55, 180);
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(128, 55, 180, 0.75) 0%,
+  //   rgba(78, 124, 166, 0.8) 10%,
+  //   rgba(150, 55, 181, 0.7) 40%,
+  //   rgba(150, 55, 181, 0.7) 60%,
+  //   rgba(78, 124, 166, 0.8) 90%,
+  //   rgba(128, 55, 180, 0.75) 100%
+  // );
   &::before {
     display: block;
     content: "";
@@ -65,12 +67,25 @@
   }
 }
 .layout {
+  position: relative;
   background-image: url("../../assets/images/mainbg.jpg");
   background-attachment: scroll;
   background-position: bottom;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  &::after {
+    z-index: 0;
+    min-height: 100vh;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    filter: brightness(80%);
+  }
 }
 .none {
   display: none;

@@ -55,10 +55,19 @@ function ResponsiveAppBar() {
     }
   };
   return (
-    <AppBar position="sticky" style={{ width: "100%" }}>
+    <AppBar
+      position="sticky"
+      style={{
+        width: "100%",
+        boxShadow: "1px 2px 20px 20px black",
+        background: "black",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <AdbIcon
+            sx={{ display: { xs: "none", md: "flex", color: "red" }, mr: 1 }}
+          />
           <CustomLink to={"/"}>
             <Typography
               variant="h6"
@@ -69,7 +78,7 @@ function ResponsiveAppBar() {
                 fontFamily: "inherit",
                 fontWeight: "inherit",
                 letterSpacing: ".3rem",
-                color: "inherit",
+                color: "white",
                 textDecoration: "none",
               }}
             >
@@ -105,7 +114,7 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <div style={{ background: "rgb(25,118,210,0.9)" }}>
+              <div style={{ background: "rgb(0,0,0,0.9)" }}>
                 {pages.map((page, idx) => (
                   <CustomLink to={page.endpoint} key={idx}>
                     <MenuItem onClick={handleCloseNavMenu}>
@@ -116,7 +125,9 @@ function ResponsiveAppBar() {
               </div>
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <AdbIcon
+            sx={{ display: { xs: "flex", md: "none", color: "red" }, mr: 1 }}
+          />
           <NavLink to={"/"}>
             <Typography
               variant="h5"
@@ -128,7 +139,7 @@ function ResponsiveAppBar() {
                 fontFamily: "inherit",
                 fontWeight: "inherit",
                 letterSpacing: ".3rem",
-                color: "inherit",
+                color: "white",
                 textDecoration: "none",
               }}
             >
@@ -154,8 +165,8 @@ function ResponsiveAppBar() {
                 onClick={handleLogout}
                 style={{
                   color: "white",
-                  border: "solid black 2px",
-                  boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)",
+                  border: "solid white 2px",
+                  boxShadow: "0 0 20px rgba(255, 255, 255, 0.5)",
                   marginRight: "5px",
                   fontSize: "1.4vh",
                 }}

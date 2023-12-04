@@ -2,8 +2,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 40vh;
-  @media (min-width: 1200px) {
-    width: 50vw;
-  }
+  width: 80vw;
+  z-index: 2;
 }

@@ -76,120 +76,122 @@ const SignUpPage: React.FC = () => {
       setShowError(false);
       navigate("/");
     } catch (error: any) {
-      console.log(error)
+      console.log(error);
       setShowError(true);
     }
   };
   return (
-    <Container
-      component="main"
-      maxWidth="xs"
-      style={{
-        padding: "15px",
-        backdropFilter: "blur(2px)",
-        borderRadius: "5px",
-        boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)",
-        background: "rgba(255, 255, 255, 0.3)",
-      }}
-    >
-      <form onSubmit={formik.handleSubmit}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Section translateX={"0"} translateY={"100px"} transition={0.2}>
-              <Typography sx={{ marginTop: "15px" }} variant="h5">
-                Sign up in Marcy
-              </Typography>
-            </Section>
+      <Container
+        component="main"
+        style={{
+          width: "100vw",
+          padding: "15px",
+          backdropFilter: "blur(2px)",
+          borderRadius: "5px",
+          boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)",
+          background: "rgba(255, 255, 255, 0.3)",
+        }}
+      >
+        <form onSubmit={formik.handleSubmit}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Section translateX={"0"} translateY={"-100px"} transition={0.2}>
+                <Typography sx={{ marginTop: "15px" }} variant="h5">
+                  Sign up in Marcy
+                </Typography>
+              </Section>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                id="email"
+                name="email"
+                label="Email"
+                variant="outlined"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                error={formik.touched.email && Boolean(formik.errors.email)}
+                helperText={formik.touched.email && formik.errors.email}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                id="password"
+                name="password"
+                label="Password"
+                type="password"
+                variant="outlined"
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                error={
+                  formik.touched.password && Boolean(formik.errors.password)
+                }
+                helperText={formik.touched.password && formik.errors.password}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                id="repeatPassword"
+                name="repeatPassword"
+                label="Repeat Password"
+                type="password"
+                variant="outlined"
+                value={formik.values.repeatPassword}
+                onChange={formik.handleChange}
+                error={
+                  formik.touched.repeatPassword &&
+                  Boolean(formik.errors.repeatPassword)
+                }
+                helperText={
+                  formik.touched.repeatPassword && formik.errors.repeatPassword
+                }
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              id="email"
-              name="email"
-              label="Email"
-              variant="outlined"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              error={formik.touched.email && Boolean(formik.errors.email)}
-              helperText={formik.touched.email && formik.errors.email}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              id="password"
-              name="password"
-              label="Password"
-              type="password"
-              variant="outlined"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              error={formik.touched.password && Boolean(formik.errors.password)}
-              helperText={formik.touched.password && formik.errors.password}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              id="repeatPassword"
-              name="repeatPassword"
-              label="Repeat Password"
-              type="password"
-              variant="outlined"
-              value={formik.values.repeatPassword}
-              onChange={formik.handleChange}
-              error={
-                formik.touched.repeatPassword &&
-                Boolean(formik.errors.repeatPassword)
-              }
-              helperText={
-                formik.touched.repeatPassword && formik.errors.repeatPassword
-              }
-            />
-          </Grid>
-        </Grid>
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          color="primary"
-          style={{ marginTop: "16px" }}
-        >
-          Sign Up
-        </Button>
-        <Button
-          onClick={signUpWithGoogle}
-          fullWidth
-          variant="contained"
-          color="primary"
-          style={{
-            marginTop: "16px",
-            height: "px",
-            background: "white",
-            color: "black",
-          }}
-          startIcon={
-            <Icon className="material-icons">
-              <img src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png" />
-            </Icon>
-          }
-        >
-          Sign Up with Google
-        </Button>
-      </form>
-      {showError && (
-        <Typography
-          style={{
-            textAlign: "center",
-            margin: "15px",
-            color: "red",
-            letterSpacing: "5px",
-          }}
-        >
-          Wrong credentials
-        </Typography>
-      )}
-    </Container>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            style={{ marginTop: "16px" }}
+          >
+            Sign Up
+          </Button>
+          <Button
+            onClick={signUpWithGoogle}
+            fullWidth
+            variant="contained"
+            color="primary"
+            style={{
+              marginTop: "16px",
+              height: "px",
+              background: "white",
+              color: "black",
+            }}
+            startIcon={
+              <Icon className="material-icons">
+                <img src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png" />
+              </Icon>
+            }
+          >
+            Sign Up with Google
+          </Button>
+        </form>
+        {showError && (
+          <Typography
+            style={{
+              textAlign: "center",
+              margin: "15px",
+              color: "red",
+              letterSpacing: "5px",
+            }}
+          >
+            Wrong credentials
+          </Typography>
+        )}
+      </Container>
   );
 };
 

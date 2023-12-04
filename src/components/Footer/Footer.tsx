@@ -10,7 +10,7 @@ const Footer = () => {
         fontSize: "20px",
         display: "flex",
         flexWrap: "wrap",
-        color: "rgba(255,255,255,0.7)",
+        color: "rgba(255,202,42,0.8)",
       }}
     >
       <div>
@@ -19,6 +19,7 @@ const Footer = () => {
           : "Gmail"}
         <Tooltip title="Copy">
           <IconButton
+            sx={{ color: "rgba(153,142,136,0.7)" }}
             onClick={() => {
               navigator.clipboard.writeText("popov.yarik.popov@gmail.com");
             }}
@@ -31,6 +32,7 @@ const Footer = () => {
         {window.innerWidth > 800 ? "Cell: +380953167438" : "Cell"}
         <Tooltip title="Copy">
           <IconButton
+            sx={{ color: "rgba(153,142,136,0.7)" }}
             onClick={() => {
               navigator.clipboard.writeText("+380953167438");
             }}
@@ -42,7 +44,11 @@ const Footer = () => {
       <div>
         {window.innerWidth > 800 ? "Telegram: @Clemsonn" : "Telegram"}
         <Tooltip title="Visit">
-          <IconButton href="https://t.me/Clemsonn" target="_blank">
+          <IconButton
+            sx={{ color: "rgba(153,142,136,0.7)" }}
+            href="https://t.me/Clemsonn"
+            target="_blank"
+          >
             <TelegramIcon />
           </IconButton>
         </Tooltip>

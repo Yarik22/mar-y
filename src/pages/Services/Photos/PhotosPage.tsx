@@ -6,8 +6,12 @@ import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
 import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
+import Photo from "../../../api/interfaces/AstroPhotos";
+import { addDoc, collection } from "firebase/firestore";
+import { auth, db } from "../../../config/firebase";
 
 const itemsPerPage = 3;
+const photosCollectionRef = collection(db, "photos");
 
 const PhotoGallery: React.FC = () => {
   const { photos, fetchPhotos, formattedDate, setFormattedDate } =
@@ -37,6 +41,18 @@ const PhotoGallery: React.FC = () => {
 
   const handleImageLoad = () => {
     setImageLoaded(true);
+  };
+  const addPhotoToData = async (photo: Photo) => {
+    await addDoc(photosCollectionRef, {
+      id: photo.id,
+      earth_date: photo.earth_date,
+      img_src: photo.img_src,
+      landing_date: photo.rover.landing_date,
+      launch_date: photo.rover.launch_date,
+      rover_status: photo.rover.status,
+      rover_name: photo.rover.name,
+      user_id: auth.currentUser?.uid,
+    });
   };
   return (
     <div className={styles.container}>
@@ -76,7 +92,12 @@ const PhotoGallery: React.FC = () => {
               onLoad={handleImageLoad}
               style={{ display: imageLoaded ? "block" : "none" }}
             />
-            <Button variant="contained" color="success" fullWidth>
+            <Button
+              variant="contained"
+              color="success"
+              fullWidth
+              onClick={() => addPhotoToData(photo)}
+            >
               Success
             </Button>
           </div>

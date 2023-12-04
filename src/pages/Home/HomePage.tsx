@@ -15,57 +15,52 @@ export default function HomePage() {
       <motion.div className={styles["progress-bar"]} style={{ scaleX }} />
       <div className={styles.container}>
         <Section translateX={0} translateY={"-200px"} transition={2}>
-          <h1>Mars Exploration Program</h1>
+          <h1 style={{ color: "white" }}>Mars Exploration Program</h1>
         </Section>
         <hr />
-        <section id="mission-statement">
-          <Section translateX={"-20vw"} translateY={0} transition={2}>
-            <h2>MISSION STATEMENT</h2>
-          </Section>
-          <Section translateX={0} translateY={"50px"} transition={2}>
-            <p id="main_page">
-              The goal of the Mars Exploration Program is to explore Mars and to
-              provide a continuous flow of scientific information and discovery
-              through a carefully selected series of robotic orbiters, landers,
-              and mobile laboratories interconnected by a high-bandwidth
-              Mars/Earth communications network.
-            </p>
-          </Section>
-        </section>
-        <hr />
-        <section id="about-program">
-          <Section translateX={"-20vw"} translateY={0} transition={2}>
-            <h2>ABOUT THE PROGRAM</h2>
-            <a
-              href="https://mars.nasa.gov/files/mep/Mars_Exploration_Program_Future_Plan.pdf"
-              target="_blank"
-              id="draft-plan"
-            >
-              DRAFT Mars Exploration Program Future Plan
-            </a>
-          </Section>
-          <Section translateX={0} translateY={"50px"} transition={2}>
-            <p id="main_page">
-              NASA’s Mars Exploration Program (MEP) is seeking feedback from the
-              science community for its draft plan for the future of the
-              program. MEP is excited to share this draft vision for the
-              program’s future, entitled “Plan for a Sustainable Future for
-              Science at Mars.” The plan is intended to look toward the next 20
-              years and center on community-responsive science themes. The draft
-              plan suggests a new strategic paradigm designed to: send low-cost,
-              high-value science missions to Mars at a higher frequency; develop
-              new mission-enabling technologies; and address critical
-              infrastructure at Mars. We are seeking community feedback at:
-              <code> HQ-MEP@mail.nasa.gov</code>
-            </p>
-          </Section>
-        </section>
+        <div style={{ display: "flex" }}>
+          <section id="mission-statement">
+            <Section translateX={"-20vw"} translateY={0} transition={2}>
+              <h2>MISSION STATEMENT</h2>
+            </Section>
+            <Section translateX={0} translateY={"50px"} transition={2}>
+              <p id="main_page">
+                The goal of the Mars Exploration Program is to explore Mars and
+                to provide a continuous flow of scientific information and
+                discovery through a carefully selected series of robotic
+                orbiters, landers, and mobile laboratories interconnected by a
+                high-bandwidth Mars/Earth communications network.
+              </p>
+            </Section>
+          </section>
+          <section id="about-program">
+            <Section translateX={"-20vw"} translateY={0} transition={2}>
+              <h2>ABOUT THE PROGRAM</h2>
+            </Section>
+            <Section translateX={0} translateY={"50px"} transition={2}>
+              <p id="main_page">
+                NASA’s Mars Exploration Program (MEP) is seeking feedback from
+                the science community for its draft plan for the future of the
+                program. MEP is excited to share this draft vision for the
+                program’s future, entitled “Plan for a Sustainable Future for
+                Science at Mars.” The plan is intended to look toward the next
+                20 years and center on community-responsive science themes. The
+                draft plan suggests a new strategic paradigm designed to: send
+                low-cost, high-value science missions to Mars at a higher
+                frequency; develop new mission-enabling technologies; and
+                address critical infrastructure at Mars. We are seeking
+                community feedback at:
+                <code> HQ-MEP@mail.nasa.gov</code>
+              </p>
+            </Section>
+          </section>
+        </div>
         <hr />
         <section id="program-goals">
           <Section translateX={"-20vw"} translateY={0} transition={2}>
             <h2>PROGRAM GOALS</h2>
           </Section>
-          <Section translateX={0} translateY={"100px"} transition={2}>
+          <Section translateX={0} translateY={"100px"} transition={0.8}>
             <p id="main_page">
               NASA’s Mars Exploration Program is a science-driven,
               technology-enabled study of Mars as a planetary system in order to
@@ -114,7 +109,7 @@ export default function HomePage() {
               the individual missions in Program-level project requirements.
             </p>
           </Section>
-          <Section translateX={0} translateY={"-50px"} transition={2}>
+          <Section translateX={0} translateY={"50px"} transition={2}>
             <p id="main_page" style={{ marginTop: 5 }}>
               To support an integrated program structure, the Mars Program
               carries out a number of activities that provide crosscutting

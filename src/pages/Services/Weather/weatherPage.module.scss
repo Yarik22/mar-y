@@ -1,6 +1,7 @@
 .container {
   width: 100%;
   height: calc(73vh);
+  z-index: 2;
   @media (max-width: 1360px) {
     height: calc(61vh - 5vw);
   }
