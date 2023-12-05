@@ -14,8 +14,6 @@ export default function AstroPage() {
   useEffect(() => {
     if (auth.currentUser != null) {
       fetchPhotos(auth.currentUser?.uid);
-      console.log(auth.currentUser.email);
-      console.log(auth.currentUser.phoneNumber);
     }
   }, []);
 

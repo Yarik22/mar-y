@@ -25,8 +25,8 @@ const useUserPhotosSlice = create<UserPhotosSlice>((set) => ({
     try {
       const q = query(
         photosCollectionRef,
+        where("user_id", "==", user_id),
         where("id", "==", id),
-        where("user_id", "==", user_id)
       );
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach(async (document) => {

@@ -48,6 +48,7 @@ const PhotoGallery: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const today = dayjs();
+  const startDate = dayjs(new Date(2012, 7, 5));
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -68,6 +69,7 @@ const PhotoGallery: React.FC = () => {
             <DemoItem>
               <MobileDatePicker
                 defaultValue={dayjs(formattedDate)}
+                minDate={startDate}
                 maxDate={today}
                 onAccept={(date: Dayjs | null) => {
                   setDate(date?.format("YYYY-MM-DD"));
